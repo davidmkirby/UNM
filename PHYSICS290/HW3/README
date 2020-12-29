@@ -1,0 +1,18 @@
++++++HW3+++++++
+use of function to calculate integral and error in integration using midpoint,simpson or trapezoid
+
+1)HW3_Sapkota.m use function in directory to show integral and error of some function 
+
+
+2)HW3_Sapkota_myIntFunc.m function calculate integral over given interval of the given function
+% here function use Midpoint, Simpsons or Trapezoid method in given interval
+% Function call: [sumintegral] = HW3_Sapkota_myIntFunc(FuncHandle,N,Method)
+%   INPUTS
+% FuncHandle:  this handle the function to be integrated
+% L: lower limit of our integral
+% U: upper bound of our integral
+%N:no of size interval
+% Method: String Variable to choose which method 'MidPoint', 'Trapezoid' or 'Simpson'
+%   OUTPUT
+% Integral: The calculated integral
+% Function also generate the plot showing the subinterval use

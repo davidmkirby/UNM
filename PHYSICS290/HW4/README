@@ -1,0 +1,11 @@
+++++++++++++++++++++
+HW4
+++++++++++++++++++++
+
+1) problem-1 use euler method odinary differential equation to solve for position, velocity of mass spring system and plot it position vs time and compare with exact solution. calculate time period and compare with exact. 
+
+2) problem-2 use videowriter matlab function to make motion of mass spring system. 
+
+3) Problem-3 demonstrate use of log log both x-axis and y-axis logarithmic scale
+
+4) problem-4 solve simple differential equation 

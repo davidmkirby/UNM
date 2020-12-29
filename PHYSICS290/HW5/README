@@ -1,0 +1,11 @@
+++++++++++++++++++++
+HW5
+++++++++++++++++++++
+
+1) problem-1 solve and plot motion driven by oscillator using Runge Kutta 4 method (RK4) for integration
+
+2) problem-2 solve and plot alpha particle scattering using Runge Kutta 4 method (RK4) for integration
+
+3) problem-3 use of loglog plot to show error in RK4 vs euler(RK1) method for integration
+
+4) problem-4 simulate orbit of mercury  

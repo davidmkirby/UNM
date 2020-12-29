@@ -1,0 +1,14 @@
+++++++++++++++++++++
+HW11
+++++++++++++++++++++
+Sapkota_HW11.m contains following problem solution.
+
+1) problem-1 use symbolic tool to plot sin function
+
+2) problem-2 use of sybolic tool to plot Hermite Polynomials
+
+3) problem-3 use Harmonic oscillator problem using Hermitte polynomial and symbolic tool basically solving Schrodinger equation
+
+4) problem-4 is to make PDF Report of solution of problem-3 using Latex. so, Sapkota11question4.pdf has it solution and its source file is Sapkota11question4.tex
+
+5) problem-5 use Python to solve the mass spring system using Euler method

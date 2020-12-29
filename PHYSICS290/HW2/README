@@ -1,0 +1,15 @@
++++++++++++++++
+HW2
++++++++++++++++
+
+%Sapkota_HW2_function.m 
+This function calculate sum of all element of InputArray
+Function call: [Sum] = Sapkota_HW2_function(InputArray) 
+% InputArray can be any size of matrix
+
+%Sapkota_HW2_problem.m
+
+1) problem-1 create an anonymous function that divides the first input by second and Demonstrate its use.
+2) problem-2 demonstrate use of Sapkota_HW2_function.m
+3) problem-3 use of plot and various properties of plot function to plot figure and adding effects on it and adding other figure too.
+4) problem -4 show all the rows and column of matrix created by A=magic(5) sum to same number and use of the for loop to show all row and column add up same number.

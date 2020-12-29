@@ -1,0 +1,13 @@
+++++++++++++++++++++
+HW6
+++++++++++++++++++++
+***
+Sapkota_HW6_Minifunclass.m use class to find minimum value of the function using Newton or Secant or golden Search Method
+***
+Sapkota_HW6.m
+
+1) problem-1 use Sapkota_HW6_Minifunclass.m to find minumum value of the function using Newton
+
+2) problem-1 use Sapkota_HW6_Minifunclass.m to find minumum value of the function using Secant
+
+3) problem-1 use Sapkota_HW6_Minifunclass.m to find minumum value of the function using Golden Search

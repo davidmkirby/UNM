@@ -1,0 +1,9 @@
+++++++++++++++++++++
+HW9
+++++++++++++++++++++
+*****
+InClass8Data.mat contains data. 
+susanHW9class.m contains class file for MCMC curve fiting. 
+gui.m interact with the class method for functionality like push button 
+******
+Sapkota_HW9.m use of above to show MCMC curve fitting. 

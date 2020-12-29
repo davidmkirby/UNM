@@ -1,0 +1,9 @@
+++++++++++++++++++++
+HW10
+++++++++++++++++++++
+
+IsingModel2Class.m is class for 2D Ising Model using Markow chain rule.
+
+gui.m helps us to add various features. 
+
+Sapkota_HW10.m programs use above class to show 2D Ising model.

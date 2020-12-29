@@ -1,0 +1,21 @@
+++++++++++++++++++++
+HW7
+++++++++++++++++++++
+***
+HW7_Data.mat contains data.
+SapkotaHW7_hist.m function switching the cases for the nargin or nargout
+***
+Sapkota_HW7.m contains-
+
+1) problem-1 use SapkotaHW7_hist.m to give identical output on nargin and nargout
+
+2) problem-2 produces numbers that are nearly normally distributed. then Generate 1000
+   numbers and show the histogram.  Use the central limit theorem to explain
+   how this works.
+
+3) problem-3 use file 'HW7_Data.mat' contains two variables, 'Y' and 'T'. then Use
+ Newton's method to do a least-squares fit of the data to the model Y(T)=A*T
+ Plot our fit result on top of the data with circles.
+
+4) problem-4 generate a 2D random walk in square region.
+
