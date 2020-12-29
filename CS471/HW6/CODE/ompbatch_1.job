@@ -1,0 +1,12 @@
+#!/bin/bash  
+#SBATCH -A TG-MTH200004     # account name (project charge number)                                
+#SBATCH -J mmul_omp_t8      # job name                                                            
+#SBATCH -o mmul8_out.%j     # output file                                                                                                         
+#SBATCH -N 1                # total nodes requested                                               
+#SBATCH -n 16                # total MPI tasks requested                                           
+#SBATCH -p development      # queue name (use development for requested time < 2hrs)              
+#SBATCH -t 00:05:00         # total wall clock time requested <hh:mm:ss>                          
+cd $SLURM_SUBMIT_DIR
+echo $SLURM_SUBMIT_DIR
+export OMP_NUM_THREADS=8    # total number of OpenMP threads requested (1 per KNL core)           
+./homework6.x

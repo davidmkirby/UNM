@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+%\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{graphicx}
+
+\DeclareMathOperator{\abs}{abs}
+
+\lstset{basicstyle=\ttfamily}
+
+\author{Susan Sapkota and Anish Adhikari}
+
+\begin{document}
+
+\title{Homework 5}
+\maketitle
+
+\section{Description}
+ This project models and stimulates the flocking behavior of N numbers of birds using sets of ordinary differential equation(ODE) in two dimensional space. This problem help to understand dynamics of diseases, attraction and so on in real life. The flock of birds have leader and crazy feeder. The crazy feeder attracts leader birds and all other birds follow leader. 
+ \section{Methods}
+ \subsection{Modelling}
+Let $B_k(t) = (x_k(t),y_k(t))$  be the location of the kth bird at time t where k=1,2,3,4,.....,N. $B_1(t)$ is the location of the leader. Let $C(t) = (x_c(t),y_c(t))$ be crazy feeder which attracts leader. Then, any instance t, $B_1(t)$ is directly proportional to the distance between crazy feeder and leader given by, 
+\begin{equation}
+    B^{'}_1(t) = \gamma_1 (C(t)-B_1(t))     
+\end{equation}
+where $\gamma_1$ is a positive constant whose magnitude depends how good is food. when $x_c>x_1$ then attractive force term becomes positive. i.e. velocity of leader is positive and move towards right.
+
+All the other birds follow leader and try to stay close to leader. So, any instance t, $B_2(t)$ is directly proportional to the distance between birds and leader given by, 
+\begin{equation}
+    B^{'}_k(t) = \gamma_2 (B_1(t)-B_k(t)),      k=2,3,4,.....,N.
+\end{equation}
+where $\gamma_2>0$ is positive constant whose magnitude depends how charismatic the leader is. Basically,$\gamma_2$ determine how strong interaction is there between leader and other birds.
+
+The birds try to be as close as in flock i.e close to flock's center of mass.  let $\bar{B}(t)= \ \sum_{k=1}^N \frac{B_k(t)}{N}$. Then, there is flocking force that holds the birds together and keep away from predator which is directly proportional to distance between flock's center of mass and particular bird given by, 
+\begin{equation}
+    F^{fl}_k(t) = \kappa(\bar{B}(t)-B_k(t)),      k=2,3,4,....,N.
+\end{equation}
+where $\kappa$ is clumping or flocking constant. The higher the $\kappa$ the birds tend to follow average position instead of leader resulting to drive away from leader. 
+
+Furthermore, Birds cannot be too close together such that there is strong repelling force. let k-th bird $B_k$ is repelled by its L closest neighbour then repelling force is given by, 
+\begin{equation}
+    F^{rep}_k(t) = \sum_{l=1}^{L}\rho \frac{(B_k(t)-B_l(t))}{(B_k(t)-B_l(t))^{2}+\delta},   k=2,3,4,...,N.
+\end{equation}
+where $\rho>0$ is constant steering the magnitude of force or repelling constant. $\delta>0$ is clustering constant. Higher the $\delta$ helps in forming clusters faster within segregated group.
+
+\subsection{Initial Value Problem}
+We compute derived systems of ordinary differential equations from the equation 1,2,3 and 4. The initial conditions are $B_k(0)=(x_k(0),y_k(0))$ and $C(t)=0$ or $C(t)=(sin(\alpha t),cos(\alpha t))$. Here $\alpha$ determines the path of the flock. To be precise it is the magnitude of the path of the leader bird. Higher the $\alpha$ means wider leader flies to search food.For identifying the nearest neighbors, a condition has been included such that all the birds with separation less than or equal to 0.2 are close neighbors. Then derived systems of ODE is given by
+\begin{equation*}
+    B^{'}_1(t) = \gamma_1 (C(t)-B_1(t)) 
+\end{equation*}
+\begin{equation*}
+     B^{'}_k(t) = \gamma_2 (B_1(t)-B_k(t))+F^{fl}_k(t)+F^{rep}_k(t)
+\end{equation*}
+we solve numerically above derived system of ODEs using class four Runge-Kutta method described in the section 3.3. All the codes are written in Fortran and the final stimulation is done using MATLAB and ffmpeg. we add smiley bird at center then again solve the above ODEs by adding forcing term $F_{smelly}=\mu(B_k(t)-B_{smelly})$ using RK4.Here $\mu$ determines how strong smelly bird repels away from the bird systems without affecting leader.
+\subsection{Runge-Kutta (RK4)}
+Runge-Kutta method approximate the solution to a ordinary differential equation given by, 
+\begin{equation*}
+    \frac{dy(t)} {dt} = y^{'}(t)= F(y(t),t),  y(t_0) = y_0
+\end{equation*}
+let y is unknown at time t, n be number of iteration and step-size h then RK4 approximate $y_{n+1}$ given by
+\begin{equation*}
+y_{n+1}=y_n+\frac{1}{6}h(K_1+2K_2+2K_3+K_4) 
+ \end{equation*}
+ \begin{equation*}
+ t_{n+1} = t_n +h,           n=0,1,2,.....
+\end{equation*}
+$K_1$ is the slope at the beginning of interval using y given by
+ \begin{equation*}
+ K_1 = F(t_n,y_n)
+\end{equation*}
+$K_2$ is the slope at the midpoint of interval using y and $K_1$ given by 
+\begin{equation*}
+    K_2 = F(t_n+\frac{h}{2},y_n+h \frac{K_1}{2})
+\end{equation*}
+$K_3$ is the slope at the midpoint of interval using y and $K_2$ given by 
+\begin{equation*}
+    K_3 = F(t_n+\frac{h}{2},y_n+h \frac{K_2}{2})
+\end{equation*}
+$K_4$ is the slope at the end of interval using y and $K_3$ given by 
+\begin{equation*}
+    K_4 = F(t_n+h,y_n+hK_3)
+\end{equation*}
+
+
+
+\section{Results and Discussion}
+
+The diameter of the flock is the center and farthest points away in the flock.The diameter of the flock changes often and it depends the largest distance between the farthest birds. If the flocking force is very strong then the diameter decreases and to the minimum and if the repellent force is too strong then the diameter is maximum.
+Initially when {$\gamma1$},{$\gamma2$},{$\kappa$},and {$\delta$} are all 1 and {$\rho$} is equals to 0.6.We will find that the flocking force is strong and the diameter of the flock will decrease gradually but never to zero because the birds cant sit on top of one another. This is when the neighbour birds realize that there is food and start following the leader.Now, when we fluctuate the parameters we will see different results. We only change one parameter at a time to see the effect of deviation based on the initial trends.
+
+When we increase the value of {$\gamma1$} from 1 to 10 the leader is initially spread out but then after time leader close in and tighter to feeder. So increasing the {$\gamma1$} value will bring the leader closer to food faster like in movie 2.
+When we increase the value of {$\gamma2$} from 1 to 5 the flocking force increases rapidly and birds come close to one another with seperation of 0.2 and the flocking diameter deceases like in movie 3.When we change {$\kappa$} from 1 to 4 the other birds start moving away from the leader bird until the  as seen in movie 4.
+when we increase {$\delta$} from 1 to 4 the flocking diameter decreases and the other birds come closer to one another.When we change {$\rho$} from 0.6 to 3 the cluster decreases and birds gets diverge away which is seen in movie. After adding the smelly bird at initial bird position with higher $\mu$ values, the birds drive away in the movies from center of gravity without affecting leader. on Increasing the birds number, we found out the average position depend on large number of bird and not much on the leader.
+
+We most seemed to end up mostly with two scenarios until it reached its limit and became stable or it decreased to its limit and then achieve stability. The fluctuation in the parameters only changed the time of the stability.
+
+
+\end{document}

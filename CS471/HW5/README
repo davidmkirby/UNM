@@ -1,0 +1,41 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+Readme file for Homework 5 , CS-471 fall-2020 , M Motamed
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Author@Susan sapkota and Anish Adhikari
+
+
+�-In this project we simulate the behaviour of birds in a two dimenisonal space
+�-Our goal is to use a ordinary differential equation to stimulate the behavour of the flock of 
+birds along with the leader bird.
+�The leader bird runs towards the crazy bird feeder and all the other birds follow the leader bird
+�-This source code is located in the code directory
+�The simulation movie of behaviour of birds with varaying parameters and smelly bird is located 
+in the MOVIE directory
+
+Compile, Run, Graph and movie
+
+make         # compile
+make run      # run the program 
+make graph    #  graph the frame of the birds at a time ( need a matlab installed and running)
+make movie    #  joint all the frames to make videos ( need FFmpeg)
+
+The directory CODE contains the following files and sub directory with withoutsmiley containing same file where there is no smiley bird:-
+1) RK4_leader.f90
+2) feederbird.f90
+3) flockingbird.f90
+4) frames.f90
+5) repelforce.f90 
+6) values.f90
+7) plotsmiley.m
+
+
+The directory MOVIE containts following items
+1) Movie with different parameter Movie_1 to Movie_6 without smiley and Movie_7 and Movie_8 with smiley and changing mu. see the README file for detail of parameter and representation of differnt things like feeder, smiley, leader and birds in README 
+
+
+REPORT sub directory contains-
+ 
+1)HW5.pdf
+2)HW5.tex
+
+This project was pushed using a ubuntu system form local machine.

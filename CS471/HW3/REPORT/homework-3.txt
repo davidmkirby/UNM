@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\lstset{basicstyle=\ttfamily}
+\DeclareMathOperator{\abs}{abs}
+\author{Sushan Sapkota and Anish Adhikari}
+\begin{document}
+\title{Homework 3}
+\maketitle
+
+\section{Description}
+Project to calculate the value of given integral  $I = \int_{-1}^{1} e^{\cos(kx)} dx$ using fortran program using Trapezoidal and Gauss Quadrature for two different values of k $\pi$ \& $\pi^{2}$.
+
+\section{Requirements}
+\begin{itemize}
+    \item A Fortran compiler tested and working.
+    \item Linux Environment 
+    \item Matlab for error plot
+\end{itemize}
+
+\section{Compiling the program}
+
+\subsection{Using Fortran compiler}
+The following commands should be from the \texttt{HW3} directory.
+
+\subsubsection{GNU Fortran}
+\begin{lstlisting}
+The following code makes makefile with name Integral and errors
+For Integral -
+gfortran -c functions.f90 gauss_quadrature.f90 Trapezoidal.f90 HW3.f90
+gfortran -o integral functions.o gauss_quadrature.o Trapezoidal.o HW3.o
+
+For relative error-
+gfortran -c functions.f90 gauss_quadrature.f90 Trapezoidal.f90 errors.f90
+gfortran -o errors functions.o gauss_quadrature.o Trapezoidal.o errors.f90
+
+
+\end{lstlisting}
+
+\section{List of Source code}
+\begin{tabular}{l|l}
+Name & Description\\
+\hline
+functions.f90 & This includes the list of required functions\\
+HW3.f90 & This program call functions and subroutines to calculate integral values\\
+Trapezoidal.f90 & This function compute integral using Trapezoidal method \\
+gauss\_quadrature.f90 & This function compute integral using gauss quadrature\\
+errors.f90 & This program calculate relative error calling functions \\
+data.txt & This is txt file that contains data for plotting in matlab\\
+lglnodes.f90 & This subroutine compute nodes used in gauss quadrature\\
+matlaberror.m & This matlab code to plot the error\\
+\end{tabular}
+
+\section{Summary}
+In this project We use the Gauss Quadrature and Trapezoid rule to approximate the given integral
+\begin{align*}
+    \int_{-1}^{1} e^{\cos(kx)} dx
+\end{align*}
+for the given two valuse of $k = \pi, \pi^2$ and then  plot the error using Matlab. It is difficult to compute exact integral of such function. So, we cannot compute absolute error using exact integral. In this project, we used relative method for error calculation based on the previous integral value and current integral value based on the given tolerance value.
+
+\subsection{Error Plot}
+The loglog plot of the relative error and number of sub inteval is below:-
+\newline
+\includegraphics[width=\textwidth]{errorplot.jpg}
+
+\subsection{Convergence of Trapezoidal rule}
+
+\begin{align}
+Sum - Integral = (\displaystyle{\sum \limits_{m=1}^{p}} \frac{B_{m}}{m!}(f^{m-1}(a) - f^{m-1}(b))) + R
+\end{align}
+where $B_{m}$ is the $m$th Bernoulli number and R is the error term of the order O($n^{-3}$).
+The derivates of given function $f(x) = e^{cos(kx)}$ consist of cosine and sine terms.
+\begin{align}
+    f'(x) = -k \ {\sin (kx)}\ {e^{\cos (kx)}}\\
+    f''(x) = (-k^{2}\ \cos(kx) + k^{2} (\sin(kx))^{2}\ e^{\cos(kx)}
+\end{align}
+we can see if $k=\pi$, the $(f^{k-1}(a) - f^{k-1}(b))$ term vanishes because of the periodic nature of the cosine (even) and sine (odd) function. so, we expect equation no 1 to converge to R which is 
+$O(n^{-3})$. The error plot for the $k= \pi$ for trapezoidal is similar to $O(n^{-3})$ but it doesn't hold correct for $k = \pi^{2}$.
+
+\subsection{Gauss Quadrature}
+we used Gauss Quadrature to compute the integral and its error. In Gauss quadrature, the grid-points $z_{i}$ (nodes) and quadrature weight $w_{i}$ is calculated using $w(z)$=1 and applying legendre polynomial. The same integral convergence quicker than trapezoidal integral which can clearly visible in Error plot. For the larger sub interval, we can see $\exp\left(\cos(\pi x)\right)$, the error is roughly $2.45^{-1.8n}$ and for $\exp\left(\cos(\pi^2 x)\right)$, the error is roughly $10.3^{-0.35n}$. 
+\newline
+
+
+\newline
+
+\end{document}

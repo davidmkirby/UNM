@@ -1,0 +1,49 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+Readme file for Homework 4 , CS-471 fall-2020 , M Motamed
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Author@Susan sapkota and Anish Adhikari
+
+·-This project is on computing  integral and derivatives on a logically rectangular domain by using 
+  a smooth mapping from a reference element and error on their computation.
+·-We can see in this project that 2d curvelinear system can be mapped using a reference element also
+.-The error plot obtained from the error in differentiation has also been included.
+·-This source code form the professor and our code is included in the code directory.
+ 
+- compile,run and graph code
+
+  make # for compile 
+  make run # for running code 
+  make plot # for graphing 
+  make clean # cleaning all o flag and unnecessary files 
+
+The sub directory Source contains the code form professor-
+1) differentiate.f90
+2) homework4.f90
+3) plotgrid.m(matlab code for plotting the grid)
+4) printdble.f90
+5) xycoord.f90 
+6) errors.f90
+
+This project contains following code to compute the derivative/integral and for smooth mapping-
+1) metric.f90
+2) trapazoidal2d.f90
+3) hw4laplace.f90
+4) plotgriderror.m
+5) testcase.f90
+6) printerror.m
+
+The subdirectory laplace inside code consist:-
+1) metric.f90
+2) trapazoidal2d.f90
+3) hw4laplace.f90
+4) plotgriderror.m
+5) testcase.f90
+6) printerror.m
+REPORT sub directory contains-
+ 
+1)Report.pdf
+2)main.txt
+3)figures which is attached on report
+
+This project was pushed using a ubuntu system.The text editor nano was used to create this readme file and
+ -Git codes like add, push and commit were used it to push it to the online repository from my local machine

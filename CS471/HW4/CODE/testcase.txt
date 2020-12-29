@@ -1,0 +1,5 @@
+ Value of Integral   0.0000000000000000     
+ Value of Integral   0.0000000000000000     
+ Value of Integral   5.5695870090530860E-020
+ Value of Integral                       NaN
+ Value of Integral   0.0000000000000000     

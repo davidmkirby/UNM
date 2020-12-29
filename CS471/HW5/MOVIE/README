@@ -1,0 +1,79 @@
++++++++++++++++++++++++++++++++++++++++
+The parameter value in individual movie
++++++++++++++++++++++++++++++++++++++++
+RED dot is crazy feeder.
+GREEN dot is the leader.
+BLACK dot is the other bird.
+YELLOW dot is the smiley bird.
+Movie_1 to Movie_6 is without smiley bird 
+ 
+1) Movie_1
+N=10
+gamma1=1
+gamma2=1
+kappa=1
+delta=1
+rho=0.6
+
+2) Movie_2
+N=100
+gamma1=10
+gamma2=1
+kappa=1
+delta=1
+rho=0.6
+
+3) Movie_3
+N=100 
+gammma1=1
+gamma2=5
+kappa=1
+delta=1
+rho=0.6
+
+4)Movie_4
+N=100
+gamma1=1
+gamma2=1
+kappa=4
+delta=1
+rho=0.6
+
+5) Movie_5
+N=100
+gamma1=1
+gamma2=1
+kappa=1
+delta=4
+rho=0.6
+
+6) Movie_6
+N=100
+gamma1=1
+gamma2=1
+kappa=1
+delta=1
+rho=3
+
+
+7) Movie_7
+N=100
+gamma1=1
+gamma2=1
+kappa=1
+delta=1
+rho=1
+mu=1
+
+
+8) Movie_8
+N=200
+gamma1=1
+gamma2=1
+kappa=1
+delta=1
+rho=1
+mu=5
+
+
+

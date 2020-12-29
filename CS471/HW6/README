@@ -1,0 +1,37 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+Readme file for Homework 6 , CS-471 fall-2020 , M Motamed
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Author@Susan sapkota and Anish Adhikari
+
+This project is about using openMP to calculate derivative and integral(extended version of Homework-4).
+The code is run on stampede2 super computer and all the plot is done on matlab. 
+
+Running code on stampede2
+
+1) make # set -openfmp
+2) sbatch ompbatch_1.job  #check the ompbatch_1.job depending on number on cores one need and time 
+3) make clean   #clean all -o flag, .mod file
+
+Running code on PC(check the number of core you pc have and set to required core and then procedure)
+
+1) make  #set gfortran on make file
+2) ./homework6.x # to see the output 
+
+There are two directory in this homework. 
+
+CODE directory consists:- 
+1)differentiate.f90
+2)printdble.f90
+3)homework4.f90
+4)homeowork6.f90
+5)trapezoidal2d.f90
+6)xycoord.f90
+7) ompbatch_1.job
+8) speedandefficiency.m, weakgrid.m and strong2000qs.m
+9) some .txt outfile from stampede and .jpeg plot file 
+
+
+REPORT directory consists:-
+1)HW6.pdf
+2)main.txt
+3).jpeg file used in reports 

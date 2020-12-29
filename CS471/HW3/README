@@ -1,0 +1,29 @@
+﻿++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+Readme file for Homework Three , CS-471 fall-2020 , M Motamed
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Author@Anish Adhikari and Susan Sapkota
+
+
+· -This project is about approximating the given integral and calculate error in approximation using trapezoidal and gauss quadrature by      writing a Fortran script
+· -This is a Homework report in directory HW3 contain two sub-directory 
+
+CODE sub directory contains-
+1) functions.f90
+2) Trapezoidal.f90(for the trapezoid rule)
+3) gauss_quadrature.f90(for quadrature rule)
+4) lglnodes.f90
+5) HW3.f90 
+6) errors.f90
+7) matlaberror.m
+8) data.txt
+
+REPORT sub directory contains-
+Anyone can navigate Report.pdf to compile the code and reproduce results. 
+1) Report.pdf
+2) errorplot.jpg
+3) Report.txt
+
+which has been added committed and then pushed.
+· -It includes function. f90 which contains the functions we are working with, trapezoid.f90 contains the subroutine for trapezoid rule and gauss_quadrature.f90 contains the quadrature rule
+· -The text editor vim was used to create this readme file -Git codes like add, push and commit were used it to push it back to the online repository from my local machine
+
